@@ -11,7 +11,9 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.TreeMap;
+import javax.swing.JOptionPane;
 import modelo.Cliente;
+import modelo.FileXML;
 
 /**
  *
@@ -62,6 +64,15 @@ String m1=mostrarDatosMap(map);
      //   System.out.println(m2);
        // System.out.println("_______________");
       //  System.out.println(m3);
+      
+      
+      boolean t=FileXML.creararchivoXML(map);
+    if(t){
+        JOptionPane.showMessageDialog(null, "Archivo creado");
+    }
+    else{
+        JOptionPane.showMessageDialog(null, "Archivo no creado");
+    }
     }
     public static String mostrarDatosMap(Map<Integer, LinkedList<Cliente>>m){
         String mostrar="";
